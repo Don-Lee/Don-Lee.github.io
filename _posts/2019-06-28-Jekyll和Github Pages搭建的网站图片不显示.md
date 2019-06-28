@@ -18,8 +18,7 @@ tags:
 ```
 <img src="/img/article/img_demo.png"/>
 
-- 第二种解决方法
-
+- 第二种解决方法  
 将图片上传到图床，然后图床会提供一个url，然后使用这个url就可以显示图片了。
 
 推荐的图床：[SM.MS](https://sm.ms/)
