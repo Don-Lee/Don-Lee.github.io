@@ -19,7 +19,8 @@ tags:
 因此只能继续使用ScrollView,那么解决RecyclerView显示不全的方法也很简单,如下：
 * 用RelativeLayout包裹RecyclerView即可,网上有说用LinearLayout包裹也可以,但是我这里不行
 * PS：RelativeLayout里不可以设置多余属性,否者会出现上图中上下滚动的现象  
-下面贴出xml源码,具体设置可查看如下源码：
+下面贴出xml源码,具体设置可查看如下源码：  
+
 ```java
  <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -155,4 +156,5 @@ tags:
 
     </android.support.constraint.ConstraintLayout>
 ```
+
                         
