@@ -14,7 +14,7 @@ tags:
 但是使用NestedScrollView嵌套带有EditText的RecyclerView时，当用户在EditText输入时Recyclerview会上下跳动，这就比较尴尬了，
 如下所示：  
 
-<img src="https://github.com/Don-Lee/Notes/blob/master/Images/scrollview_recyclerview.gif" height="530" width="300" >
+<img src="/img/article/scrollview_recyclerview.gif" height="530" width="300" >
 
 因此只能继续使用ScrollView,那么解决RecyclerView显示不全的方法也很简单,如下：
 * 用RelativeLayout包裹RecyclerView即可,网上有说用LinearLayout包裹也可以,但是我这里不行

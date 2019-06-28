@@ -30,8 +30,8 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 }
 ```
 - 在 DevTools 中打开 WebView
-在chrome地址栏中输入chrome://inspect 并回车，然后点击您想要调试的 WebView 下方的 inspect
-<img src="https://github.com/Don-Lee/Notes/blob/master/Images/webview_debug.png"/>
+在chrome地址栏中输入chrome://inspect 并回车，然后点击您想要调试的 WebView 下方的 inspect  
+<img src="/img/article/webview_debug.png"/>   
 
 - 故障排除
 在 chrome://inspect page 上无法看到您的 WebView？

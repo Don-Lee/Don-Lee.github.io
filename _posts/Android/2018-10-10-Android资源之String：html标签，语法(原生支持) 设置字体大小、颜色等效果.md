@@ -29,7 +29,7 @@ String s = getString(R.string.report_runtime, 420,171600);
 textview.setText(Html.fromHtml(s));
 ```
 运行效果为：
-![Image text](https://github.com/Don-Lee/Notes/blob/master/Images/report_1.png)
+<img src="/img/article/report_1.png"/>   
 
 以下标签应该也是可以支持的，未测试：          
 "b");     ==>StyleSpan(Typeface.BOLD), <br/>                                                                             									
