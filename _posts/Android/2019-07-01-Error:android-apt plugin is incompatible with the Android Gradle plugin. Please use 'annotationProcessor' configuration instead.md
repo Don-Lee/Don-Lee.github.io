@@ -2,7 +2,7 @@
 layout:     post
 title:      Error:android-apt plugin is incompatible with the Android Gradle plugin. Please use 'annotationProcessor' configuration instead.
 subtitle:   
-date:       2019-06-27
+date:       2019-07-01
 author:     Don
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
