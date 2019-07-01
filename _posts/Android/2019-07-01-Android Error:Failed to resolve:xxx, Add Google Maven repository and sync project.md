@@ -2,7 +2,7 @@
 layout:     post
 title:      Android Error:Failed to resolve:xxx, Add Google Maven repository and sync project
 subtitle:   
-date:       2019-06-27
+date:       2019-07-01
 author:     Don
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
