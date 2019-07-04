@@ -19,6 +19,5 @@ To determine what is calling variantOutput.getProcessResources(), use -Pandroid.
 Affected Modules: app
 ```
 简单翻译一下：API 'variantOutput.getProcessResources()' 已经过时了，将在2019年末被移除，请用variantOutput.getProcessResourcesProvider()替换。  
-如果你代码中有改API替换掉即可，如果源码中没有，那么有可能因为我们依赖的第三方插件使用了过时的API导致的。
-
-我们暂时可以无需理会，反正不影响运行，等待依赖库更新即可。
+如果你代码中有该API，替换掉即可；  
+如果源码中没有，那么有可能因为我们依赖的第三方插件使用了过时的API导致的。我们暂时可以无需理会，反正不影响运行，等待依赖库更新即可。
