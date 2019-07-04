@@ -8,6 +8,7 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Android
+    - Android Studio
 ---
 如果你android studio gradle的版本≥3.3.0那么及会遇到如下警告：  
 ```java
