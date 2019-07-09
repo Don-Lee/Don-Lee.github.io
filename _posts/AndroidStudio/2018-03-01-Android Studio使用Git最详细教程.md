@@ -375,5 +375,15 @@ git rebase用于把一个分支的修改合并到当前分支。现在我们切�
 点击菜单栏的VCS-->Git-->Pull,点击刷新按钮之后再选择所要Pull的远程仓库：
 ![push!](/img/article/as_git/pull.png)
 
+## 创建标签
+git上的标签一般是用于标记软件版本，发布新版本后，便将该版本的代码打上Tag，用以区别及管理  
+代码push步骤这里就不细说了，可参考上面的步骤。
+**1.创建Tag，如下图：**
+![push!](/img/article/as_git/tag1.png)  
+![push!](/img/article/as_git/tag2.png)  
+**1.提交Tag，如下图：**
+![push!](/img/article/as_git/tag3.png)  
+![push!](/img/article/as_git/tag4.png)  
+
 ## 后记
 这篇文章有点长，图也很多，我也写了很久，有的时候思路不清晰也混了(尴尬脸)，所以难免会有错误，还请大家批评指正，大家互相学习，希望你能够学到更多Android Studio的知识。
