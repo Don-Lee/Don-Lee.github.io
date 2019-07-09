@@ -3,7 +3,7 @@ layout:     post
 title:      Android Studio使用Git最详细的教程
 subtitle:   
 date:       2018-03-01
-author:     BY
+author:     Don
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
@@ -374,4 +374,4 @@ git rebase用于把一个分支的修改合并到当前分支。现在我们切�
 这篇文章有点长，图也很多，我也写了很久，有的时候思路不清晰也混了(尴尬脸)，所以难免会有错误，还请大家批评指正，大家互相学习，希望你能够学到更多Android Studio的知识。
 
 
-** 文章转载自[温斯渤博客](http://www.wensibo.top) **
+**文章转载自[温斯渤博客](http://www.wensibo.top)**
