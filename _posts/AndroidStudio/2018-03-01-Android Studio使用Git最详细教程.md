@@ -377,7 +377,7 @@ git rebase用于把一个分支的修改合并到当前分支。现在我们切�
 
 ## 创建标签
 git上的标签一般是用于标记软件版本，发布新版本后，便将该版本的代码打上Tag，用以区别及管理  
-代码push步骤这里就不细说了，可参考上面的步骤。
+创建Tag之前先将代码push到远程，代码push步骤这里就不细说了，可参考上面的步骤。
 **1.创建Tag，如下图：**
 ![push!](/img/article/as_git/tag1.png)  
 ![push!](/img/article/as_git/tag2.png)  
