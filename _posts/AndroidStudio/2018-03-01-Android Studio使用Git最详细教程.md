@@ -11,7 +11,7 @@ tags:
     - Android Studio
 ---
 ## 前言
-**本文较长，图片很多很多，流量党慎入**
+**本文较长，图片很多很多，流量党慎入；文章转载自[温斯渤博客](http://www.wensibo.top)，并在其基础上增加了部分教程**
 使用Git已经有一段时间了，但是之前都是使用`Git Bash`，在Android Studio上使用Git一开始不是很习惯，就像用惯了SVN来使用Git一样，琢磨了一段时间的Android Studio，也看了我觉得为数不多但是很有质量的介绍AS的书籍 `《Android Studio实战 快速、高效地构建Android应用》`，强烈安利大家哦！所以就写了这篇文章跟大家一起学习如何在Android Studio高效地使用Git。另外如果大家想要拿来学习的话可以直接fork[我的项目](https://github.com/Wensibob/MyGit) 。
 另外一点需要说明的就是本文中大量使用Android Studio的快捷键，如果你不熟悉，可以看看我的[另外一篇文章](http://www.wensibo.top/2017/03/09/Android%20Studio%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/) 。
 
@@ -370,8 +370,10 @@ git rebase用于把一个分支的修改合并到当前分支。现在我们切�
 
 **5.对于修改过的文件想要同步到远程仓库，按照同样的步骤就行了，这里不再赘述了。**
 
+## 拉取远程仓库变动代码
+在开发中，同一个项目一般是团队一起开发的或者有多个分支，所以我们Commit之后，在Push之前我们要习惯性的Pull一下代码：  
+点击菜单栏的VCS-->Git-->Pull,点击刷新按钮之后再选择所要Pull的远程仓库：
+![push!](/img/article/as_git/pull.PNG)
+
 ## 后记
 这篇文章有点长，图也很多，我也写了很久，有的时候思路不清晰也混了(尴尬脸)，所以难免会有错误，还请大家批评指正，大家互相学习，希望你能够学到更多Android Studio的知识。
-
-
-**文章转载自[温斯渤博客](http://www.wensibo.top)**
