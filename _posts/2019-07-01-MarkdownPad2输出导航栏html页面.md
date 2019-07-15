@@ -16,7 +16,8 @@ tags:
 
 - 设置HTML HEAD编辑器   
 将如下代码配置到MarkdownPad 2里的工具-> 选项 ->高级 ->HTML HEAD编辑器 
-```
+
+``` javascript
 <script src="http://rjgc.cn/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 //是否显示导航栏
@@ -141,9 +142,12 @@ $("head").prepend(ico_link);
 </script>
 ```
 
+
 - 设置CSS  
 将如下代码配置到MarkdownPad 2里的工具-> 选项->样式表->添加 
-```
+
+
+```css
 /*markdown_box*/
     html{background: #FFFFFF; font-family:"Microsoft YaHei", "微软雅黑", Arial; font-weight: 400}
     body{background:#FFFFFF;font-size: 16px; color: #515254; line-height: 188%; margin:0 5% 0 17%; padding: 0 !important;}
