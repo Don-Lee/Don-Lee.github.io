@@ -1,4 +1,4 @@
-//是否显示导航栏
+﻿//是否显示导航栏
  var showNavBar = true;
  //是否展开导航栏
  var expandNavBar = true;
@@ -115,5 +115,5 @@ $(item).addClass("wow_head");
 
 
 //插入title的ico图标  
-var ico_link = "<link rel=icon type=image/png sizes=32x32 href=html/ico.png>";
+var ico_link = "<link rel=icon type=image/png sizes=32x32 href=http://rjgc.cn/markdown/ico.png>";
 $("head").prepend(ico_link);
