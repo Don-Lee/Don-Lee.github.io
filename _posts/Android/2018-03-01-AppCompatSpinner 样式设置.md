@@ -10,11 +10,11 @@ tags:
     - Android
 ---
 本文讲解内容包含以下几个内容：  
-	1.AppCompatSpinner字体大小及颜色设置  
-	2.分割线添加  
-	3.选中item时颜色变化动画    
-效果图如下：  
-<img src="/img/ariticle/spinner.gif"/>
+	1. AppCompatSpinner字体大小及颜色设置    
+	2. 分割线添加    
+	3. 选中item时颜色变化动画      
+效果图如下：    
+<img src="/img/article/spinner.gif" widht="300px" height="550px"/>
 
 实现以上效果，分3步：  
 #### 1.下拉列表框效果实现  
