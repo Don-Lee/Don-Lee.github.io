@@ -70,4 +70,31 @@ DataBindingUtils.java类
                     app:layout_constraintEnd_toEndOf="parent"/>
 ```
 
+下面贴出activity中spinner相关代码：  
+
+```java
+private void initSpinnerData() {
+        List<String> buildingType = new ArrayList<>();
+        buildingType.add("老式装修(2000年前竣工)");
+        buildingType.add("节能建筑(2000年后竣工)");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item, buildingType);
+
+        getBinding().setBuildingTypeList(buildingType);
+        getBinding().setAdapter(adapter);
+
+        List<String> decorateStatus = new ArrayList<>();
+        decorateStatus.add("已完成装修一年以上");
+        decorateStatus.add("已完成装修一年以内");
+        decorateStatus.add("装修中");
+        decorateStatus.add("装修咨询中");
+
+        ArrayAdapter<String> decorateAdapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item, decorateStatus);
+
+        getBinding().setDecorateStatusList(decorateStatus);
+        getBinding().setDecorateAdapter(decorateAdapter);
+    }
+```
 
