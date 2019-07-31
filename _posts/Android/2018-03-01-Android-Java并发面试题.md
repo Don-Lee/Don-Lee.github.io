@@ -8,7 +8,8 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Android
-    - JAVA
+    - Java
+    - Interview
 ---
 
 ## Java并发面试题
