@@ -8,6 +8,7 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Android
+    - Java
 ---
 
 Semaphore是一个计数信号量。信号量中维护着一个信号量许可集，它可以控制同时访问特定资源的线程数量。
