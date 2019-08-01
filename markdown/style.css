@@ -16,8 +16,8 @@
     img:hover{opacity: 1}
 
 
-    #write{margin:50px 50px 50px 260px; padding: 20px 60px; max-width: unset; background: #fff;border: 1px solid #E6ECF1; box-shadow: 0 2px 8px rgba(116, 129, 141, .08); border-radius: 4px}
-    .BlogAnchor {width: 210px !important}
+    #write{margin:50px 50px 50px 300px; padding: 20px 60px; max-width: unset; background: #fff;border: 1px solid #E6ECF1; box-shadow: 0 2px 8px rgba(116, 129, 141, .08); border-radius: 4px}
+    .BlogAnchor {width: 250px !important}
 
     @media screen and (max-width: 1620px) {
         #write{margin:40px 40px 40px 250px; padding: 20px 40px;}
