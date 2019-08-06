@@ -16,7 +16,7 @@ DataBinding的事件绑定有2种方式：
 
 1、Method References
 	
-- **创建响应方法**
+- **创建响应方法**  
 可以直接引用和listener方法签名(方法名称和一个参数列表（方法的参数的顺序和类型）组成)一致的方法，也可以自定义方法，但是我们自定义的方法参数和返回值必须与监听器中方法一样。比如对于view的onClick事件，它对应的listener的处理方法是：  
 ```java
         public interface OnClickListener {
@@ -51,7 +51,7 @@ DataBinding的事件绑定有2种方式：
 
 2、 Listener Bindings
 	
-- **创建响应方法**
+- **创建响应方法**  
 这种方法只要求返回值一样即可，这样我们可以自己定制参数，用刚刚那个例子来重写一下  
 ```java
         public class MyHandler {
