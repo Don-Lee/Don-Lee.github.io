@@ -22,7 +22,7 @@ Process 'command 'C:\Users\Administrator\AppData\Local\Android\Sdk\build-tools\2
 - 资源文件问题  用的图片应该是png而不是jpg
 - Build.Gradle 文件里加几句代码...
 
-如果上述方法不好定位错误的话，可以在android studio 的终端(底部的Terminal)中输入如果代码
+如果上述方法不好定位错误的话，可以在android studio 的终端(底部的Terminal)中输入如果代码(PS：gradlew命令在项目根目录下才有效，如果进入到module中是无效的)：    
 ```java
 gradlew processDebugResources --debug
 ```
