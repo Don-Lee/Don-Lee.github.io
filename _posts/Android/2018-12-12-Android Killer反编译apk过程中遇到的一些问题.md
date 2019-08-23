@@ -12,7 +12,8 @@ tags:
 
 #### 1.正在反编译APK源码，请稍等......
 <img src="/img/article/androidkillerproblem1.jpg"/>
-解决方法：   
+解决方法：  
+
 关闭Androidkiller 再重新打开 选择对应的最近的项目中双击打开即可 就可以成功了。   
 或者可以按此方法解决：https://www.gudanba.com/639.html
 
