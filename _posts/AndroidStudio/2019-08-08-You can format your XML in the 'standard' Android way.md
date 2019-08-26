@@ -16,6 +16,6 @@ You can format your XML in the 'standard' Android way...
 ```
 
 解决方案：  
-点击提示文案后面的“Open codestyle setting”按钮，选择“Android”选项卡，然后更改“Scheme”为"Default”即可。  
+点击提示文案后面的“Open codestyle setting”按钮，然后更改“Scheme”为"Default”即可。  
 
 <img src="/img/article/android_studio1.png"/>
