@@ -2,7 +2,7 @@
 layout:     post
 title:      You can format your XML in the 'standard' Android way......
 subtitle:   
-date:       2018-08-08
+date:       2019-08-08
 author:     Don
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
