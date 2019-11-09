@@ -26,11 +26,13 @@ Service是Android四大组件中与Activity最相似的组件，它们都代表�
 #### 2、Service的生命周期               
     a：startService 
     Service的生命周期：onCreate() --> onStartCommand() -> onDestroy()
-    停止服务：stopService()
+    停止服务：stopService()        
+    start多次，onCreate只会被调用一次，onStart会调用多次
     
     b：bindService
     Service的生命周期 onCreate() --> onBind()  --> onUnBind() --> onDestroy()
-    停止服务：UnbindService()
+    停止服务：UnbindService()  
+    不管调用bindService几次，onCreate只会调用一次，onStart不会被调用，建立连接后，service会一直运行，直到调用unBindService或是之前调用的bindService的Context不存在了，系统会自动停止Service,对应的onDestory会被调用
     
 #### 3、Service和Activity的通讯方式
     a、通过Intent
