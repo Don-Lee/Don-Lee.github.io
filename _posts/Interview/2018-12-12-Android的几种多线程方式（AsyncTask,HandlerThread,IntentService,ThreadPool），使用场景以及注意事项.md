@@ -20,7 +20,7 @@ tags:
 下面我们来一个一个分析下系统为我们提供的几种多线程方式，包括：AsyncTask,HandlerThread,IntentService,ThreadPool                     
 #### 1. AsyncTask
 使用场景：                         
-为 UI 线程与工作线程之间进行快速的切换提供一种简单便捷的机制。适用于当下立即需要启动，但是异步执行的生命周期短暂的使用场景。            
+为 UI 线程与工作线程之间进行快速的切换提供一种简单便捷的机制。适用于当下立即需要启动，但是异步执行的生命周期短暂的使用场景，比如登录验证。            
 基本使用:                        
 AsyncTask是一个抽象方法，如果想使用它，需要先创建一个子类来继承他，还需要为其指定三个泛型参数：                      
                     
@@ -65,8 +65,8 @@ Activity 发生泄漏。
 大多数情况下，AsyncTask 都能够满足多线程并发的场景需要（在工作线程执行任务并返回结果到主线程），但是它并不是万能的。
 例如打开相机之后的预览帧数据是通过 onPreviewFrame()的方法进行回调的，onPreviewFrame()和 open()相机的方法是执行在同一个线程的。
 如果使用 AsyncTask，会因为 AsyncTask 默认的线性执行的特性(即使换成并发执行)会导致因为无法把任务及时传递给工作线程而导致任务在主线程中被延迟，
-直到工作线程空闲，才可以把任务切换到工作线程中进行执行。所以我们需要的是一个执行在工作线程，同时又能够处理队列中的复杂任务的功能，
-而 HandlerThread 的出现就是为了实现这个功能的，它组合了 Handler，MessageQueue，Looper 实现了一个长时间运行的线程，
+直到工作线程空闲，才可以把任务切换到工作线程中进行执行。所以我们需要的是一个**执行在工作线程，同时又能够处理队列中的复杂任务的功能，
+而 HandlerThread 的出现就是为了实现这个功能的，它组合了 Handler，MessageQueue，Looper 实现了一个长时间运行的线程(普通Thread执行完就结束)，**
 不断的从队列中获取任务进行执行的功能。                                              
 ##### 基本用法：                                   
 HandlerThread 继承于 Thread,它本质上是一个线程，只不过是 Android 为我们封装好了 Looper 和 MessageQueue的线程，简化了操作。使用方法很简单：   
@@ -107,7 +107,7 @@ HandlerThread 继承于 Thread,它本质上是一个线程，只不过是 Androi
             }
         }).start()；  
 ```
-最后在不需要的时候记得调用quit();    
+**最后在不需要的时候记得调用quit();**    
 ```java
 @Override
     protected void onDestroy() {
@@ -116,9 +116,14 @@ HandlerThread 继承于 Thread,它本质上是一个线程，只不过是 Androi
         mHandlerThread.quit();
     }
 ```
-##### 注意事项：
-HandlerThread 比较合适处理那些在工作线程执行，需要花费时间偏长的任务。我们只需要把任务发送给 HandlerThread，然后就只需要等待任务执行结束的时候通知返回到主线程就好了。                       
-另外很重要的一点是，一旦我们使用了 HandlerThread，需要特别注意给 HandlerThread 设置不同的线程优先级，CPU 会根据设置的不同线程优先级对所有的线程进行调度优化。                     
+##### 总结：
+**HandlerThread 继承于 Thread,它本质上是一个线程，而且内部封装了 Looper 和 MessageQueue；  
+HandlerThread 比较合适处理那些在工作线程执行，需要花费时间偏长的任务，比如文件下载、本地IO读写操作（数据库，文件）。我们只需要把任务发送给 HandlerThread，然后就只需要等待任务执行结束的时候通知返回到主线程就好了。                       
+另外很重要的一点是，一旦我们使用了 HandlerThread，需要特别注意给 HandlerThread 设置不同的线程优先级，CPU 会根据设置的不同线程优先级对所有的线程进行调度优化。  
+
+缺点：  
+由于每一个任务队列逐步执行,一旦队列耗时过长,消息延时；     
+对于IO等操作,线程等待,不能并发**
 #### 3. IntentSerice
 默认的 Service 是执行在主线程的，可是通常情况下，这很容易影响到程序的绘制性能(抢占了主线程的资源)。除了前面介绍过的 AsyncTask 与 HandlerThread，我们还可以选择使用 IntentService 来实现异步操作。IntentService 继承自普通 Service 同时又在内部创建了一个 HandlerThread，在 onHandlerIntent()的回调里面处理扔到 IntentService 的任务，在执行完任务后会自动停止。所以 IntentService 就不仅仅具备了异步线程的特性，还同时保留了 Service 不受主页面生命周期影响，优先级比较高，适合执行高优先级的后台任务,不容易被杀死的特点。      
 ##### 使用场景：
