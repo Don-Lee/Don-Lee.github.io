@@ -20,13 +20,13 @@ View视图对应为xml文件，是Model的展现，负责呈现UI并在用户与
 #### **Controller** ####
 controller对应activity和fragment，是连接view和model的桥梁，是程序的主控制器。View告诉controller用户的行为，controller决定如何与model交互；跟据model中的数据更改，controller更新view的状态。
 
-**总结：** 
-优点:
+**总结：**     
+优点:     
 1. 耦合性低。mvc在分离model和view方面做的很好，但是不能完全杜绝model和view的交互
 2. 可扩展性好。由于耦合性低，添加需求，扩展代码就可以减少修改之前的代码，降低bug的出现率。
 3. 模块职责划分明确。主要划分层M,V,C三个模块，利于代码的维护。
 
-缺点：
+缺点：      
 1. mvc一个最大的弊端就是xml作为View层视图能力实在太弱，所以一般情况下我们都是通过Controller层来辅助处理一些视图的。这样的结果就导致Controller既作为控制层的同时又承担了View层的大部分功能，增加了controller和view的耦合。
 
 ## **MVP** ##
@@ -39,12 +39,12 @@ View视图对应为xml文件以及activity和fragment，负责呈现UI。View和
 #### **Presenter** ####
 Presenter负责完成View与Model间的交互和业务逻辑。Presenter作为Model和View的桥梁，负责从Model拿到数据进行处理并返回给View。但Presenter和其他两层的沟通是通过接口协议进行的，所以每个Presenter中通常会包涵一个或多个接口协议。
 
-**总结：** 
-在MVP模式里通常包含4个要素：
-1.View :负责绘制UI元素、与用户进行交互(在Android中体现为Activity);
-2.View interface :需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;
-3.Model :负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);
-4.Presenter :作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。
+**总结：**         
+在MVP模式里通常包含4个要素：         
+1.View :负责绘制UI元素、与用户进行交互(在Android中体现为Activity);         
+2.View interface :需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;         
+3.Model :负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);          
+4.Presenter :作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。          
 
 优点:
 1. mvc有的优点mvp都具备
