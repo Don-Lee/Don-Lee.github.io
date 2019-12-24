@@ -10,7 +10,7 @@ tags:
     - Android
 ---
 
-在使用DataBinding开发的过中，经常会出现无法引用到BR类的字段的情况(原因可能是字段名字和关键字重复了)，如下图所示：  
+在使用DataBinding开发的过中，经常会出现无法引用到BR类的字段的情况，如下图所示：  
 <img src="/img/article/BR.png"/>   
 
 一般情况下会有以下几种解决办法：   
