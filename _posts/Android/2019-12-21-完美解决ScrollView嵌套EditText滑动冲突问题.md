@@ -13,7 +13,7 @@ tags:
 
 最近有个项目，ScrollView中嵌套嵌套了一个可以上下滑动的多行EditText,而且EditText滑动到顶部或者顶部时需要将滑动事件交还给ScrollView,
 具体效果如下(图片中可能有些卡顿，但是实际非常流畅)：   
-<img src="/img/article/EditTextWithScrollView.gif" width=350 height=500/>    
+<img src="/img/article/EditTextWithScrollView.gif" width="350" height="500"/>    
 
 好了，话不多说，直接上代码：   
 ```java
