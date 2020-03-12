@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      AppCompatSpinner 样式设置
+title:      AppCompatSpinner的使用及样式设置
 subtitle:   
 date:       2018-03-01
 author:     Don
@@ -57,8 +57,8 @@ DataBindingUtils.java类
                     android:layout_height="@dimen/height_48_default"
                     android:paddingEnd="@dimen/spacing_16"
                     app:permission="@{permission}"
-                    android:adapter="@{decorateAdapter}"
-                    android:entries="@{decorateStatusList}"
+                    android:adapter="@{adapter}"
+		    android:entries="@array/buildingTypeArray"  /*adapter和entries二选一设置即可*/
                     android:selectedItemPosition="@={model.renovationStatusIndex}"
                     android:background="@android:color/white"
                     setTextColor="@{@color/default_color}" /*此句代码设置颜色，调用DataBindingUtils.java类中方法*/
@@ -70,7 +70,8 @@ DataBindingUtils.java类
                     app:layout_constraintEnd_toEndOf="parent"/>
 ```
 
-下面贴出activity中spinner相关代码：  
+设置Spinner数据源有2种方式：   
+方法一: 在java代码中给Spinner设置adapter，下面贴出activity中spinner相关代码：  
 
 ```java
 private void initSpinnerData() {
@@ -81,20 +82,22 @@ private void initSpinnerData() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_dropdown_item, buildingType);
 
-        getBinding().setBuildingTypeList(buildingType);
         getBinding().setAdapter(adapter);
 
-        List<String> decorateStatus = new ArrayList<>();
-        decorateStatus.add("已完成装修一年以上");
-        decorateStatus.add("已完成装修一年以内");
-        decorateStatus.add("装修中");
-        decorateStatus.add("装修咨询中");
-
-        ArrayAdapter<String> decorateAdapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_dropdown_item, decorateStatus);
-
-        getBinding().setDecorateStatusList(decorateStatus);
-        getBinding().setDecorateAdapter(decorateAdapter);
     }
 ```
 
+方法二:在xml文件中设置android:entries属性     
+
+1. 在res/values 下面创建array.xml文件，代码如下：      
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="buildingTypeArray">
+        <item>老式装修(2000年前竣工)</item>
+        <item>节能建筑(2000年后竣工)</item>
+    </string-array>
+</resources>
+```
+
+2. 设置spinner的entries属性即可，spinner的xml源码上文有贴出，此处就比贴了

@@ -19,7 +19,6 @@ tags:
                     android:layout_height="@dimen/height_48_default"
                     android:paddingEnd="@dimen/spacing_16"
                     android:adapter="@{adapter}"
-                    android:entries="@{peopleNumList}"
                     android:selectedItemPosition="@={water.peopleRange}"
                     android:background="@android:color/white"
                     android:onItemSelected="@{(parent,view,position,id)->viewModel.spinnerItemChanged(parent,view,position,id)}"
