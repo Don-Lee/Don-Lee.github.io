@@ -90,7 +90,7 @@ private void initSpinnerData() {
 方法二:在xml文件中设置android:entries属性     
 
 1. 在res/values 下面创建array.xml文件，代码如下：      
-```java
+```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="buildingTypeArray">
