@@ -44,7 +44,7 @@ MVP核心思想是：
 设计一个抽象的V层接口，并由具体的View实现该接口，P层内部维护一个该接口的实例引用，一般在构造函数中传递进来赋值(即View层初始化P层实例时)，彼时P层即可通过调用该接口来完成对View层的操作,V层也因持有P层实例，可以进行业务逻辑处理委派。      
 因此在MVP模式里通常包含4个要素：         
 1.View :负责绘制UI元素、与用户进行交互(在Android中体现为Activity);         
-2.View interface :需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;         
+2.View interface :需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试;  View层接口类只应该只有set/get方法，及一些界面显示内容和用户输入，除此之外不应该有多余的内容           
 3.Model :负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合);          
 4.Presenter :作为View与Model交互的中间纽带，处理与用户交互的负责逻辑。          
 
