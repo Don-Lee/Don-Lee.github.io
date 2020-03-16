@@ -25,21 +25,21 @@ JFrog Artifactory有的人陌生但有的人不陌生。它主要是一款二进
 下载完成后解压相应版本到安装目录。
 
 - 破解与安装   
-1. 打开命令行工具，跳转到你的jar包所在目录，执行 java -jar artifactory-injector-1.1.jar,然后会跳出两个选项，分别是：1-生成密钥字符串；2-破解
+1.打开命令行工具，跳转到你的jar包所在目录，执行 java -jar artifactory-injector-1.1.jar,然后会跳出两个选项，分别是：1-生成密钥字符串；2-破解
 
 <img src="/img/article/artifactory1.webp"/>
 
-2. 输入数字 2
+2.输入数字 2
 
 <img src="/img/article/artifactory2.webp"/>
 
-3. 输入软件包的路径  
+3.输入软件包的路径  
 <img src="/img/article/artifactory3.webp"/>
 
 4.输入“yes”，之后会出现一大串内容，然后跳出两个选项：1-生成密钥字符串；2-破解;  最后请输入数字1  
 <img src="/img/article/artifactory4.webp"/>
 
-5. 将密钥字符串拷贝下来(启动后会使用)，然后输入“exit”退出；
+5.将密钥字符串拷贝下来(启动后会使用)，然后输入“exit”退出；
 
 6.进入bin目录点击artifactory.bat 启动Artifactory,actifactory运行期间不要关闭artifactory.bat打开的命令行窗口
 
@@ -56,9 +56,9 @@ Artifactory有三种仓库：
 众所周知，android项目默认会依赖jcenter和google两个库，而我们访问这2个库的速度是非常缓慢的，那我们可以使用artifactory来解决这个问题。有的朋友
 说可以直接使用阿里云的代理库就可以了，是的，的确可以，但是artifactory搭建私服访问速度更快，而且还可以使用本地库来管理我们自己的构件。
 
-1. 在浏览器中打开artifactory并登录，默认账号密码是admin/password    
+1.在浏览器中打开artifactory并登录，默认账号密码是admin/password    
 
-2. 点击admin,选中Remote
+2.点击admin,选中Remote
 
 <img src="/img/article/artifactory1.png"/>
 
@@ -67,22 +67,22 @@ Artifactory有三种仓库：
 
 <img src="/img/article/artifactory2.png"/>
 
-4. 重复步骤3，把jcenter、google、public库都添加进去     
+4.重复步骤3，把jcenter、google、public库都添加进去     
 
 <img src="/img/article/artifactory3.png"/>  
 
-5. 点击admin,选中Virtual,然后点击有上角new按钮，选择Maven类型
+5.点击admin,选中Virtual,然后点击有上角new按钮，选择Maven类型
 
 <img src="/img/article/artifactory4.png"/>  
 
-6. 按照上图步骤设置1、2、3后点击保存即可    
+6.按照上图步骤设置1、2、3后点击保存即可    
 
-7. 将android studio中jcenter和google库替换为我们私服中的url即可   
+7.将android studio中jcenter和google库替换为我们私服中的url即可   
 
 <img src="/img/article/artifactory5.png"/> 
 
 
-8.  local仓库你可以上传自己的Library包等组件，然后用gradle的implementation进行引用即可，此处就不详解了   
+8.local仓库你可以上传自己的Library包等组件，然后用gradle的implementation进行引用即可，此处就不详解了   
 
 
 完成以上步骤后你可以打开你的ide试一下编译速度，第一次加载的时候会比较慢，因为要把库加载到本地，第二次开始你就会发现你的ide已经飞起来了
