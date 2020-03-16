@@ -12,7 +12,7 @@ tags:
 ---
 
 JFrog Artifactory有的人陌生但有的人不陌生。它主要是一款二进制存储管理工具，可以搭建私服，帮助我们管理我们的构件，以提升我们的开发效率。   
-笔者将从搭建开始并示范如果提升你的开发效率。   
+笔者将从搭建开始并示范如何提升你的开发效率。   
 
 
 搭建之前请先android jdk1.8，否则搭建不成功
@@ -61,7 +61,7 @@ Artifactory有三种仓库：
 
 <img src="/img/article/artifactory1.png"/>
 
-3.点击有上角的new按钮，选择Maven类型，然后输入key(随便写)，url使用的是阿里云代理的库地址,最后点击save即可。    
+3.点击右上角的new按钮，选择Maven类型，然后输入key(随便写)，url使用的是阿里云代理的库地址,最后点击save即可。    
 此处附上阿里云代理仓库列表： https://maven.aliyun.com/mvn/view
 
 <img src="/img/article/artifactory2.png"/>
@@ -70,7 +70,7 @@ Artifactory有三种仓库：
 
 <img src="/img/article/artifactory3.png"/>  
 
-5.点击admin,选中Virtual,然后点击有上角new按钮，选择Maven类型
+5.点击admin,选中Virtual,然后点击右上角new按钮，选择Maven类型
 
 <img src="/img/article/artifactory4.png"/>  
 
