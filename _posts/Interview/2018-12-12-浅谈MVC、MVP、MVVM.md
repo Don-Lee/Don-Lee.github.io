@@ -66,7 +66,7 @@ MVP核心思想是：
 mvvm即Model——— View ———ViewModel.
 
 #### **Model** ####
-model用于获取业务数据模型，和之前的M层没区别
+model由于引进了Repository，所以这里的Model的定义相对简单，就是JavaBean
 
 #### **View** ####
 View层就是展示数据的，以及接收到用户的操作传递给viewModel层，通过dataBinding实现数据与view的单向绑定或双向绑定 
@@ -74,7 +74,7 @@ View层就是展示数据的，以及接收到用户的操作传递给viewModel�
 #### **ViewModel** ####
 ViewModel逻辑控制层，负责处理数据和处理View层中的业务逻辑。它还为View提供了将事件传递给Model的通道
 
-MVVM的目标和思想与MVP类似，它利用数据绑定(Data Binding)、命令(Command)以及jetpack组件打造的数据驱动的架构。    
+MVVM的目标和思想与MVP类似，它利用数据绑定(Data Binding)、命令(Command)、Repository以及jetpack组件打造的数据驱动的架构。    
 ps:Command（命令绑定）简言之就是对事件的处理（下拉刷新、加载更多、点击、滑动等事件处理）
 
 
