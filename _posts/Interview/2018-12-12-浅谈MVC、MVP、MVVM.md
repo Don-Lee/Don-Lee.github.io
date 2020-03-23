@@ -89,4 +89,5 @@ ps:Command（命令绑定）简言之就是对事件的处理（下拉刷新、�
 1. 数据绑定使得 Bug 很难被调试。你看到界面异常了，有可能是你 View 的代码有 Bug，也可能是 Model 的代码有问题。数据绑定使得一个位置的 Bug 被快速传递到别的位置，要定位原始出问题的地方就变得不那么容易了。
 2. 数据双向绑定不利于代码重用。客户端开发最常用的重用是View，但是数据双向绑定技术，让你在一个View都绑定了一个model，不同模块的model都不同。那就不能简单重用View了。
 
+
 更详细的mvvm可参考[https://tech.meituan.com/android_mvvm.html](https://tech.meituan.com/android_mvvm.html)
