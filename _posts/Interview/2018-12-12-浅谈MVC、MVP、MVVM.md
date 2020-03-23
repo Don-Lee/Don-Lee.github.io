@@ -14,7 +14,8 @@ tags:
 mvc即模型（model）——— 视图（view）——— 控制器（controller），将应用程序在宏观上分为3种职责。
 
 #### **Model** ####
-model模型，负责数据+业务逻辑的处理，比如数据库存取操作，网络操作都在model层处理，当然对业务计算等操作也要放在这里处理,这样做的一个重要原因就是Android中的Actiivity的响应时间是5s，如果耗时的操作放在activity里，程序就很容易被回收掉。
+model模型，负责数据逻辑的处理，比如数据库存取操作，网络操作都在model层处理
+
 #### **View** ####
 View视图对应为xml文件，是Model的展现，负责呈现UI并在用户与应用程序交互时与Controller通信。
 #### **Controller** ####
@@ -35,7 +36,7 @@ mvp即模型（model）——— 视图（view）——— 逻辑控制层（pre
 #### **Model** ####
 与mvc中的model相同，无变化。
 #### **View** ####
-View视图对应为xml文件以及activity和fragment，负责呈现UI。View和Presenter的交互是双向的，即View层可以调用Presenter的逻辑方法，Presenter也可以控制View的显示。
+View视图对应为xml文件以及activity和fragment，负责呈现UI。View和Presenter的交互是双向的，即v和p互相持有对方实例，可以互调对方的方法     
 #### **Presenter** ####
 Presenter负责完成View与Model间的交互和业务逻辑。Presenter作为Model和View的桥梁，负责从Model拿到数据进行处理并返回给View。但Presenter和其他两层的沟通是通过接口协议进行的，所以每个Presenter中通常会包涵一个或多个接口协议。
 
@@ -65,13 +66,17 @@ MVP核心思想是：
 mvvm即Model——— View ———ViewModel.
 
 #### **Model** ####
-model用于获取业务数据模型
+model用于获取业务数据模型，和之前的M层没区别
 
 #### **View** ####
 View层就是展示数据的，以及接收到用户的操作传递给viewModel层，通过dataBinding实现数据与view的单向绑定或双向绑定 
 
 #### **ViewModel** ####
 ViewModel逻辑控制层，负责处理数据和处理View层中的业务逻辑。它还为View提供了将事件传递给Model的通道
+
+MVVM的目标和思想与MVP类似，它利用数据绑定(Data Binding)、命令(Command)以及jetpack组件打造的数据驱动的架构。    
+ps:Command（命令绑定）简言之就是对事件的处理（下拉刷新、加载更多、点击、滑动等事件处理）
+
 
 **总结：** 
 
