@@ -22,6 +22,7 @@ tags:
 打开设置对话框	Control + Alt + S	  
 打开项目结构对话框	Control + Alt + Shift + S  
 在标签和工具窗口之间切换	Control + Tab	  
+列出当前类的成员变量与方法，然后输入名称可进行查找   Ctrl + F12
 
 #### 在 Studio 内导航和搜索
 搜索全部内容（包括代码和菜单）	按两次 Shift	  
