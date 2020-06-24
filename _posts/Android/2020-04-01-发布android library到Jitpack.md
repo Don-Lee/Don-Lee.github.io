@@ -9,6 +9,7 @@ catalog: true
 tags:
     - Android
 ---
+作为一名合格的开发者，除了会使用轮子外还要会造轮子，那么造了轮子如何发布呢？这里介绍一种目前最简单的发布方式[JitPack](https://jitpack.io/)
 
 #### 1.添加android-maven 插件
 
