@@ -12,7 +12,7 @@ tags:
 
 ### 前言
 
-什么是AOP，什么是AspectJ，这里就不过多介绍了，如果有不懂的，请移步[Android AOP从入门到实战](http://rjgc.cn) 进行了解，本文旨在AspectJ使用介绍。
+什么是AOP，什么是AspectJ，这里就不过多介绍了，如果有不懂的，请移步[Android AOP从入门到实战](http://rjgc.cn/2020/05/01/Android-AOP%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/) 进行了解，本文旨在AspectJ使用介绍。
 
 
 
