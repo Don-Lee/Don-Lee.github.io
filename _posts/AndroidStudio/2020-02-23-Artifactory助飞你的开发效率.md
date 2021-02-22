@@ -22,7 +22,7 @@ JFrog Artifactory有的人陌生但有的人不陌生。它主要是一款二进
 链接: https://pan.baidu.com/s/1phFGTa7-UinsfxUpfm--GA 提取码: nv4v 
 
 下载完成后解压相应版本到安装目录。
-<!--
+<!----
 #### 破解与安装   
 1.打开命令行工具，跳转到你的jar包所在目录，执行 java -jar artifactory-injector-1.1.jar,然后会跳出两个选项，分别是：1-生成密钥字符串；2-破解
 
@@ -43,7 +43,7 @@ JFrog Artifactory有的人陌生但有的人不陌生。它主要是一款二进
 6.进入bin目录点击artifactory.bat 启动Artifactory,actifactory运行期间不要关闭artifactory.bat打开的命令行窗口
 
 7.打开浏览器，输入localhost:8081,接下来就会出现一个需要密钥的窗口，直接把上面得到的密钥字符串贴上去即可
--->
+---->
 
 #### 使用教程(以Android Studio为例，示范代理android项目所依赖的库文件，其他IDE同理)    
 Artifactory有三种仓库：    
