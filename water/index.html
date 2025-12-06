@@ -140,9 +140,11 @@
             animation: pulse 2s infinite;
         }
 
-        /* 底部固定导航 */
+        /* 底部固定导航 (解决箭头遮挡问题) */
         .bottom-bar {
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            position: fixed; 
+            bottom: 10px; /* 从 20px 调整为 10px */
+            left: 50%; transform: translateX(-50%);
             z-index: 100;
             width: 90%;
             max-width: 400px;
@@ -170,10 +172,27 @@
             border-radius: 40px;
         }
 
-        /* 向上箭头提示 */
+        /* 向上箭头提示 (定位到导航栏上方，并增强提示文字) */
         .arrow-up {
-            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-            animation: moveUp 1.5s infinite; opacity: 0.7; z-index: 20;
+            position: absolute; 
+            bottom: 80px; /* 关键调整：从 30px 调整为 80px，位于导航条上方 */
+            left: 50%; transform: translateX(-50%);
+            animation: moveUp 1.5s infinite; 
+            opacity: 0.7; 
+            z-index: 20;
+            color: var(--text-white); 
+            line-height: 1.2;
+        }
+        .arrow-up i {
+            display: block;
+            margin: 0 auto;
+            font-size: 1.5rem;
+        }
+        .arrow-up span {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: 1px;
         }
 
         @keyframes pulse {
@@ -184,7 +203,7 @@
         @keyframes moveUp {
             0% { transform: translate(-50%, 0); opacity: 0; }
             50% { opacity: 1; }
-            100% { transform: translate(-50%, -20px); opacity: 0; }
+            100% { transform: translate(-50%, -30px); opacity: 0; } /* 增大位移到 -30px */
         }
     </style>
 </head>
@@ -197,7 +216,6 @@
             <div class="bg-circle c1"></div>
             <div class="bg-circle c2"></div>
             <div class="content">
-                <!-- <div class="hero-icon anim-up d-1"><i class="fas fa-shield-alt"></i></div> -->
                 <div class="hero-icon anim-up d-1">
                     <img src="logo.png" alt="logo.png" style="width: 80px; height: 80px;">
                 </div>
@@ -214,7 +232,10 @@
                     <i class="fas fa-phone-alt"></i> 立即免费咨询
                 </a>
             </div>
-            <div class="arrow-up"><i class="fas fa-chevron-up"></i></div>
+            <div class="arrow-up">
+                <i class="fas fa-chevron-up"></i>
+                <span>向上滑动</span>
+            </div>
         </div>
 
         <div class="swiper-slide">
@@ -234,7 +255,10 @@
                     承接：别墅/工程供暖改造、消防/自来水管道测漏、换分水器
                 </p>
             </div>
-            <div class="arrow-up"><i class="fas fa-chevron-up"></i></div>
+            <div class="arrow-up">
+                <i class="fas fa-chevron-up"></i>
+                <span>向上滑动</span>
+            </div>
         </div>
 
         <div class="swiper-slide">
@@ -256,7 +280,10 @@
                     <p>全天候待命，济南及周边地区快速上门。免费咨询，找不到漏点不收费。</p>
                 </div>
             </div>
-            <div class="arrow-up"><i class="fas fa-chevron-up"></i></div>
+            <div class="arrow-up">
+                <i class="fas fa-chevron-up"></i>
+                <span>向上滑动</span>
+            </div>
         </div>
 
         <div class="swiper-slide">
@@ -299,10 +326,9 @@
             el: '.swiper-pagination',
             clickable: true,
         },
-        // 监听滑动，重置动画（可选）
         on: {
             slideChangeTransitionEnd: function () {
-                // 可以在这里添加更复杂的动画逻辑
+                // 可在此处添加更复杂的动画逻辑
             }
         }
     });
