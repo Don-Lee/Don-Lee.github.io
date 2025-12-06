@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>坤鹏测漏-漏水检测服务中心</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f0f0f0; }
+        
+        /* 核心配色 */
+        :root {
+            --primary-color: #0056b3; /* 科技蓝 */
+            --accent-color: #ff6b00;  /* 警示橙 */
+            --text-white: #ffffff;
+        }
+
+        /* Swiper 容器设置 */
+        .swiper-container { width: 100%; height: 100%; }
+        
+        /* 每一页的通用样式 */
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, #003366 0%, #0056b3 100%);
+            color: var(--text-white);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 背景装饰圆圈 */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            z-index: 0;
+        }
+        .c1 { width: 300px; height: 300px; top: -50px; left: -50px; }
+        .c2 { width: 200px; height: 200px; bottom: 10%; right: -50px; }
+
+        /* 内容层级 */
+        .content { z-index: 10; width: 100%; max-width: 400px; }
+
+        /* 动画类 */
+        .anim-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .swiper-slide-active .anim-up { opacity: 1; transform: translateY(0); }
+        /* 延迟动画 */
+        .d-1 { transition-delay: 0.1s; }
+        .d-2 { transition-delay: 0.3s; }
+        .d-3 { transition-delay: 0.5s; }
+        .d-4 { transition-delay: 0.7s; }
+
+        /* 第1页：封面 */
+        .hero-icon { font-size: 80px; margin-bottom: 20px; color: #4db8ff; text-shadow: 0 0 20px rgba(77,184,255,0.5); }
+        .main-title { font-size: 2.1rem; font-weight: bold; margin-bottom: 10px; letter-spacing: 2px; }
+        .sub-title { font-size: 1.2rem; color: #dcefff; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; display: inline-block;}
+        .tags { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+        .tag { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
+
+        /* 第2页：业务列表 */
+        .section-title { font-size: 1.8rem; margin-bottom: 30px; font-weight: bold; position: relative; }
+        .section-title::after { content:''; width: 60px; height: 4px; background: var(--accent-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            text-align: left;
+        }
+        .service-item {
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+        .service-item i { margin-right: 8px; color: #4db8ff; width: 20px; }
+
+        /* 第3页：优势 */
+        .feature-box {
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+        .feature-box h3 { color: var(--primary-color); margin-bottom: 8px; font-size: 1.2rem; }
+        .feature-box p { font-size: 0.9rem; line-height: 1.5; color: #666; }
+
+        /* 第4页：联系我们 */
+        .contact-card {
+            background: white;
+            color: #333;
+            border-radius: 15px;
+            padding: 30px 20px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .avatar-area { 
+            width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; 
+            display: flex; align-items: center; justify-content: center; font-size: 40px; color: #fff; background-color: var(--primary-color);
+        }
+        .contact-name { font-size: 1.5rem; font-weight: bold; margin-bottom: 5px; }
+        .contact-role { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        /* 模拟二维码区域 */
+        .qr-placeholder {
+            width: 150px; height: 150px; 
+            background: #f8f8f8; border: 2px dashed #ccc; 
+            margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;
+            color: #999; font-size: 0.8rem;
+        }
+        .qr-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+        .big-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        /* 底部固定导航 */
+        .bottom-bar {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            z-index: 100;
+            width: 90%;
+            max-width: 400px;
+            display: flex;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            padding: 5px;
+        }
+        .bar-btn {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .bar-btn.primary {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 40px;
+        }
+
+        /* 向上箭头提示 */
+        .arrow-up {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            animation: moveUp 1.5s infinite; opacity: 0.7; z-index: 20;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+        }
+        @keyframes moveUp {
+            0% { transform: translate(-50%, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(-50%, -20px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+            <div class="bg-circle c1"></div>
+            <div class="bg-circle c2"></div>
+            <div class="content">
+                <div class="hero-icon anim-up d-1"><i class="fas fa-shield-alt"></i></div>
+                <h1 class="main-title anim-up d-2">坤鹏测漏检测服务中心</h1>
+                <p class="sub-title anim-up d-2">精准定位 · 一步到位 · 24H抢修</p>
+                
+                <div class="tags anim-up d-3">
+                    <span class="tag">✅ 免砸砖防水</span>
+                    <span class="tag">✅ 专业设备检测</span>
+                    <span class="tag">✅ 免费咨询</span>
+                </div>
+                
+                <a href="tel:15853158538" class="big-btn anim-up d-4">
+                    <i class="fas fa-phone-alt"></i> 立即免费咨询
+                </a>
+            </div>
+            <div class="arrow-up"><i class="fas fa-chevron-up"></i></div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="content">
+                <h2 class="section-title anim-up d-1">服务项目</h2>
+                <div class="service-grid anim-up d-2">
+                    <div class="service-item"><i class="fas fa-bath"></i> 卫生间/厨房漏水</div>
+                    <div class="service-item"><i class="fas fa-tint"></i> 下水/管道漏水</div>
+                    <div class="service-item"><i class="fas fa-fire"></i> 地热漏水/清洗</div>
+                    <div class="service-item"><i class="fas fa-home"></i> 阳台/地下室漏水</div>
+                    <div class="service-item"><i class="fas fa-plug"></i> 电路故障检测</div>
+                    <div class="service-item"><i class="fas fa-tools"></i> 疏通下水</div>
+                    <div class="service-item"><i class="fas fa-building"></i> 房屋室外漏水</div>
+                    <div class="service-item"><i class="fas fa-wind"></i> 窗户漏风</div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;" class="anim-up d-3">
+                    承接：别墅/工程供暖改造、消防/自来水管道测漏、换分水器
+                </p>
+            </div>
+            <div class="arrow-up"><i class="fas fa-chevron-up"></i></div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="content">
+                <h2 class="section-title anim-up d-1">核心优势</h2>
+                
+                <div class="feature-box anim-up d-2">
+                    <h3><i class="fas fa-microscope"></i> 专业设备测漏</h3>
+                    <p>引进先进测漏仪器，拒绝盲目乱砸。精准定位漏水点，将损失降到最低。</p>
+                </div>
+
+                <div class="feature-box anim-up d-3">
+                    <h3><i class="fas fa-user-shield"></i> 专业正规团队</h3>
+                    <p>多年实战经验，检测、维修、抢修一条龙服务。徐师傅带队，值得信赖。</p>
+                </div>
+
+                <div class="feature-box anim-up d-4">
+                    <h3><i class="fas fa-clock"></i> 24小时服务</h3>
+                    <p>全天候待命，济南及周边地区快速上门。免费咨询，找不到漏点不收费。</p>
+                </div>
+            </div>
+            <div class="arrow-up"><i class="fas fa-chevron-up"></i></div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="content">
+                <h2 class="section-title anim-up d-1">联系我们</h2>
+                
+                <div class="contact-card anim-up d-2">
+                    <div class="avatar-area">徐</div>
+                    <div class="contact-name">联系人：徐大坤</div>
+                    <div class="contact-role">专业漏水检测工程师</div>
+                    
+                    <div class="qr-placeholder">
+                        <img src="二维码占位.jpg" alt="微信二维码" onerror="this.style.display='none';this.parentNode.innerHTML='<br>此处放置二维码<br>截图保存添加';">
+                    </div>
+                    <p style="color:#666; font-size:0.8rem; margin-bottom:15px;">长按保存二维码 加微信咨询</p>
+
+                    <a href="tel:15853158538" class="big-btn">
+                        <i class="fas fa-phone-volume"></i> 158-5315-8538
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bottom-bar">
+    <a href="tel:15853158538" class="bar-btn primary">
+        <i class="fas fa-phone"></i> 电话咨询
+    </a>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        loop: false,
+        mousewheel: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        // 监听滑动，重置动画（可选）
+        on: {
+            slideChangeTransitionEnd: function () {
+                // 可以在这里添加更复杂的动画逻辑
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
